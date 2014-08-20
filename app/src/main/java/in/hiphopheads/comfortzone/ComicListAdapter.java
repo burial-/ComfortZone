@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -58,6 +59,7 @@ public class ComicListAdapter extends CursorAdapter {
         String name = cursor.getString(ComicsFragment.COL_COMIC_NAME);
         // Find the comic name TextView and set the name on it
         viewHolder.comicNameView.setText(name);
+        viewHolder.iconView.setImageResource(getIconFromComicName(name));
     }
 
     // Just the basic method for creating a view
@@ -82,16 +84,30 @@ public class ComicListAdapter extends CursorAdapter {
      */
     public static class ViewHolder {
         // TODO: fix the button
-        //public final ImageButton quickImageView;
+        public final ImageView iconView;
         public final TextView titleView;
         public final TextView authorView;
         public final TextView comicNameView;
 
         public ViewHolder(View view) {
-            //quickImageView = (ImageButton) view.findViewById(R.id.comic_list_item_quick);
+            iconView = (ImageView) view.findViewById(R.id.comic_list_item_quick);
             titleView = (TextView) view.findViewById(R.id.comic_list_item_title);
             authorView = (TextView) view.findViewById(R.id.comic_list_item_author);
             comicNameView = (TextView) view.findViewById(R.id.comic_list_item_name);
+        }
+    }
+
+    public int getIconFromComicName(String name){
+        if(name.equals("xkcd")){
+            return R.drawable.xkcd_icon;
+        } else if (name.equals("Buttersafe")) {
+            return R.drawable.bs_icon;
+        } else if (name.equals("Amazing Super Powers")) {
+            return R.drawable.asp_icon;
+        } else if (name.equals("Perry Bible Fellowship")) {
+            return R.drawable.pbf_icon;
+        } else {
+            return R.drawable.ic_action_picture;
         }
     }
 

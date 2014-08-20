@@ -43,7 +43,8 @@
         <activity
             android:name=".ComicViewer"
             android:label="@string/title_activity_comic_viewer"
-            android:parentActivityName=".Comics">
+            android:parentActivityName=".Comics"
+            android:theme="@style/Theme.ComicViewer">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="in.hiphopheads.comfortzone.Comics" />

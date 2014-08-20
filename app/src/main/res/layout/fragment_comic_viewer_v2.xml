@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context="in.hiphopheads.comfortzone.ComicViewer.ComicViewerFragment">
+
+    <!--<uk.co.senab.photoview.PhotoView-->
+    <!--android:id="@+id/comic_viewer_image_v2"-->
+    <!--android:src="@drawable/comicimage"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:scaleType="fitCenter" />-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<ImageView-->
+                <!--android:id="@+id/comic_viewer_image_v2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="260dp"-->
+                <!--android:src="@drawable/com_image"-->
+                <!--android:scaleType="centerCrop" />-->
+            <uk.co.senab.photoview.PhotoView
+            android:id="@+id/fragment_comic_image_v2"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:scaleType="centerCrop" />
+
+            <View
+                style="@style/Divider"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:paddingLeft="10dp"
+                android:background="@color/titleBar">
+
+                <TextView
+                    android:text="The Comi veryLong"
+                    android:id="@+id/fragment_comic_title_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/titleText"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:text="   View Image"
+                    android:id="@+id/fragment_comic_view_img_btn_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/viewimgText"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/altTextHeader" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_date_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:typeface="sans"
+                    android:singleLine="false"
+                    android:textColor="@color/altText" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_alt_head_v2"
+                    android:text="Alternative Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/altTextHeader" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_alt_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:typeface="sans"
+                    android:singleLine="false"
+                    android:textColor="@color/altText" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_link_head_v2"
+                    android:text="Link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/altTextHeader" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_link_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="@color/altText" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_hidden_head_v2"
+                    android:text="Hidden Comic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/altTextHeader" />
+
+                <TextView
+                    android:id="@+id/fragment_comic_hidden_v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="@color/altText" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/overlay_layout"
+        android:fitsSystemWindows="true"
+        android:background="#a4040404">
+
+        <uk.co.senab.photoview.PhotoView
+            android:id="@+id/fragment_comic_image_overlay_v2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+</RelativeLayout>
