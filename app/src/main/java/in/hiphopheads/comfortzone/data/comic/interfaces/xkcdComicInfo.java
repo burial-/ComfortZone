@@ -5,6 +5,7 @@ package in.hiphopheads.comfortzone.data.comic.interfaces;
  */
 public class xkcdComicInfo implements IComicInfo {
 
+    // Basic interface to interact with the specified comic
 
     public xkcdComicInfo(int num, String post_date, String title, String image_url, String alt_text, String url) {
         this.num = num;

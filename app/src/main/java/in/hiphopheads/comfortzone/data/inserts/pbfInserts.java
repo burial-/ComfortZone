@@ -16,6 +16,8 @@ import in.hiphopheads.comfortzone.data.comic.interfaces.pbfComicInfo;
  */
 public class pbfInserts {
 
+    // Basic insert function receives a list of comics and then inserts them into the database
+
     Context mContext;
 
     public pbfInserts(Context context) {

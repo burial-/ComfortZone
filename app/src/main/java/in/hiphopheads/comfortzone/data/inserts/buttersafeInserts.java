@@ -15,6 +15,9 @@ import in.hiphopheads.comfortzone.data.comic.interfaces.buttersafeComicInfo;
  * Created on 18/08/14.
  */
 public class buttersafeInserts {
+
+    // Basic insert function receives a list of comics and then inserts them into the database
+
     Context mContext;
 
     public buttersafeInserts(Context context) {

@@ -59,7 +59,8 @@ public class ComicListAdapter extends CursorAdapter {
         String name = cursor.getString(ComicsFragment.COL_COMIC_NAME);
         // Find the comic name TextView and set the name on it
         viewHolder.comicNameView.setText(name);
-        viewHolder.iconView.setImageResource(getIconFromComicName(name));
+        // Get the icon for the comic from the utility class
+        viewHolder.iconView.setImageResource(new Utility(context).getIconFromComicName(name));
     }
 
     // Just the basic method for creating a view
@@ -94,20 +95,6 @@ public class ComicListAdapter extends CursorAdapter {
             titleView = (TextView) view.findViewById(R.id.comic_list_item_title);
             authorView = (TextView) view.findViewById(R.id.comic_list_item_author);
             comicNameView = (TextView) view.findViewById(R.id.comic_list_item_name);
-        }
-    }
-
-    public int getIconFromComicName(String name){
-        if(name.equals("xkcd")){
-            return R.drawable.xkcd_icon;
-        } else if (name.equals("Buttersafe")) {
-            return R.drawable.bs_icon;
-        } else if (name.equals("Amazing Super Powers")) {
-            return R.drawable.asp_icon;
-        } else if (name.equals("Perry Bible Fellowship")) {
-            return R.drawable.pbf_icon;
-        } else {
-            return R.drawable.ic_action_picture;
         }
     }
 

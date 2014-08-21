@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="windowBg">#f1ede2</color>
-    <color name="actionBarBg">#b5d6aa</color>
+    <color name="actionBarBg">#403f33</color>
     <color name="titleBar">#142426</color>
     <color name="titleText">#fc5b3f</color>
     <color name="viewimgText">#e27a3f</color>

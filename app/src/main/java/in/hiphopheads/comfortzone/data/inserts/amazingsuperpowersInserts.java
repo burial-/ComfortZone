@@ -16,6 +16,8 @@ import in.hiphopheads.comfortzone.data.comic.interfaces.amazingsuperpowersComicI
  */
 public class amazingsuperpowersInserts {
 
+    // Basic insert function receives a list of comics and then inserts them into the database
+
     Context mContext;
 
     public amazingsuperpowersInserts(Context context) {

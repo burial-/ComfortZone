@@ -5,6 +5,7 @@ package in.hiphopheads.comfortzone.data.comic.interfaces;
  */
 public class buttersafeComicInfo implements IComicInfo {
 
+    // Basic interface to interact with the specified comic
 
     public buttersafeComicInfo(String date_posted, String title, String img_url, String url) {
         this.date_posted = date_posted;

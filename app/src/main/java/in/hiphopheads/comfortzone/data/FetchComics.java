@@ -20,6 +20,9 @@ import in.hiphopheads.comfortzone.data.inserts.xkcdInserts;
  */
 public class FetchComics extends AsyncTask<String, Void, Void> {
 
+    // A basic Asynchronous task to download comics from the FetchComicsApi and then insert them
+    // into the database with the corresponding comic insert class
+
     Context mContext;
 
     public FetchComics(Context mContext) {

@@ -5,6 +5,8 @@ package in.hiphopheads.comfortzone.data.comic.interfaces;
  */
 public class pbfComicInfo implements IComicInfo {
 
+    // Basic interface to interact with the specified comic
+
     public pbfComicInfo(Integer num, String img_url, String title, String url) {
         this.num = num;
         this.title = title;

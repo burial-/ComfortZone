@@ -27,8 +27,17 @@
         <item name="android:displayOptions">showHome</item>
         <item name="android:icon">@android:color/transparent</item>
     </style>
+
     <style name="mainActionBar" parent="@android:style/Widget.Holo.ActionBar">
-        <item name="android:background">@color/actionBarBg</item>
+        <item name="android:background">@android:color/holo_blue_light</item>
+    </style>
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
 
 </resources>

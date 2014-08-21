@@ -155,7 +155,7 @@
         android:layout_height="match_parent"
         android:id="@+id/overlay_layout"
         android:fitsSystemWindows="true"
-        android:background="#a4040404">
+        android:background="#d7040404">
 
         <uk.co.senab.photoview.PhotoView
             android:id="@+id/fragment_comic_image_overlay_v2"

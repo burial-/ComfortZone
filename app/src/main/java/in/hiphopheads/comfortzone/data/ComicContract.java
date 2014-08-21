@@ -19,10 +19,6 @@ public class ComicContract {
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     // Possible paths (appended to base content URI for possible URI's)
-    // For instance, content://in.hiphopheads.scumcom.data.xkcd/ is a valid path for
-    // looking at weather data. content://in.hiphopheads.scumcom/givemeroot/ will fail,
-    // as the ContentProvider hasn't been given any information on what to do with "givemeroot".
-    // At least, let's hope not.  Don't be that dev, reader.  Don't be that dev.
     public static final String PATH_COMIC = "comics";
 
     public static final class ComicEntry implements BaseColumns {
@@ -30,6 +26,8 @@ public class ComicContract {
         public static final Uri CONTENT_URI =
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_COMIC).build();
 
+        // used to set the content type, this determines if you are getting
+        // a single item or a list of items
         public static final String CONTENT_TYPE =
                 "vnd.android.cursor.dir/" + CONTENT_AUTHORITY + "/" + PATH_COMIC;
         public static final String CONTENT_ITEM_TYPE =

@@ -22,14 +22,11 @@ import in.hiphopheads.comfortzone.data.FetchComics;
  * A placeholder fragment containing a simple view.
  */
 public class ComicsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
+    // The arguments we pass through to this fragment use these two keys
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static final String COMIC_SEARCH_TERM = "search_term";
 
-
+    // These are the columns we need to display the information about each comic in this fragment
     private static String[] COMIC_COLUMNS = new String[]{
             ComicContract.ComicEntry.TABLE_NAME + "." + ComicContract.ComicEntry._ID,
             ComicContract.ComicEntry.COLUMN_COMIC_TITLE,
@@ -37,7 +34,7 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
             ComicContract.ComicEntry.COLUMN_COMIC_NAME
     };
 
-    // These indices are tied to COMIC_COLOUMNS.  If COMIC_COLOUMNS changes, these
+    // These indices are tied to COMIC_COLUMNS. If COMIC_COLUMNS changes, these
     // must change.
     public static final int COL_COMIC_ID = 0;
     public static final int COL_COMIC_TITLE = 1;
@@ -49,12 +46,11 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
     // A unique identifier for this loader. Can be whatever you want.
     private static final int COMIC_LOADER = 0;
 
+    // This holds the number corresponding to each comic
     public int COMIC_NUMBER;
 
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
+    // This returns a new instance of the ComicsFragment. If there is a search term passed through
+    // and searching is on we set it as an argument
     public static ComicsFragment newInstance(int sectionNumber, Boolean searching, String searchTerm) {
         ComicsFragment fragment = new ComicsFragment();
         Bundle args = new Bundle();
@@ -81,6 +77,7 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
                 R.id.listview_comics);
         mComicList.setAdapter(comicListAdapter);
 
+        // The OnClickListener that will pass the comic id from the database to the ComicViewer class
         mComicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -97,6 +94,7 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
         return rootView;
     }
 
+    // This is a callback function to set the ActionBar title
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -107,6 +105,7 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Get the comic number and load the corresponding data
         COMIC_NUMBER = getArguments().getInt(ARG_SECTION_NUMBER);
         switch (COMIC_NUMBER) {
             case 1:
@@ -145,10 +144,11 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
         Uri comicUri = null;
         String sortOrder = null;
 
-        // Sort order:  Ascending, by date.
+        // Sort order:  Descending, by date.
         sortOrder = ComicContract.ComicEntry.COLUMN_COMIC_DATE + " DESC";
         comicUri = ComicContract.ComicEntry.CONTENT_URI;
         String queryArgs = null;
+        // Here we set the query string to select the name the navigation drawer has set
         switch (COMIC_NUMBER) {
             case 2:
                 queryArgs = ComicContract.ComicEntry.COLUMN_COMIC_NAME + " = '" + getActivity().getString(R.string.xkcd) + "'";
@@ -164,6 +164,8 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
                 break;
         }
 
+        // Here we check if a search term has been passed through to this fragment, if it has
+        // then we add to the query text to match the search term
         if (getArguments().containsKey(COMIC_SEARCH_TERM)) {
             if (queryArgs != null) {
                 queryArgs = queryArgs + " AND " + ComicContract.ComicEntry.COLUMN_COMIC_TITLE + " LIKE '%" + getArguments().getString(COMIC_SEARCH_TERM) + "%'";
@@ -178,7 +180,6 @@ public class ComicsFragment extends Fragment implements LoaderManager.LoaderCall
                 getActivity(),
                 comicUri,
                 COMIC_COLUMNS,
-                //ComicContract.ComicEntry.COLUMN_COMIC_NAME + " = '" + getActivity().getString(R.string.perrybiblefellowship) + "'",
                 queryArgs,
                 null,
                 sortOrder

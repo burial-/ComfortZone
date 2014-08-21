@@ -14,10 +14,10 @@ import retrofit.http.GET;
  */
 public class FetchComicsApi {
 
+    // A basic class that uses retrofit to get a list of comic items from our api
     //private static final String API_URL = "http://104.131.242.120";
     // ONE DAY WE WILL HAVE IT
     private static final String API_URL = "http://hiphopheads.in";
-    //678/info.0.json
 
     public interface comicApi {
         @GET("/xkcd")

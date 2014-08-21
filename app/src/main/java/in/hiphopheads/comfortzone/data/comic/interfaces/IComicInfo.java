@@ -4,6 +4,7 @@ package in.hiphopheads.comfortzone.data.comic.interfaces;
  * Created on 18/08/14.
  */
 public interface IComicInfo {
+    // This is a basic interface that's only used to insert data at the moment
 
     // Gets the comics current ID
     public int getNum();

@@ -55,6 +55,7 @@ public class Comics extends Activity
                 .commit();
     }
 
+    // Set the title to the corresponding number
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
@@ -91,6 +92,8 @@ public class Comics extends Activity
             // decide what to show in the action bar.
             getMenuInflater().inflate(R.menu.comics, menu);
             restoreActionBar();
+
+            // This is where we create the search tool that will be used by the ComicsFragment
             // Associate searchable configuration with the SearchView
             SearchManager searchManager =
                     (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -100,6 +103,7 @@ public class Comics extends Activity
                     searchManager.getSearchableInfo(getComponentName()));
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
+                // If the user has submitted the query we pass the term to the ComicsFragment
                 @Override
                 public boolean onQueryTextSubmit(String s) {
                     //Toast.makeText(getBaseContext(), s, Toast.LENGTH_SHORT).show();
@@ -110,6 +114,9 @@ public class Comics extends Activity
                     return false;
                 }
 
+                // While the user types the search term we load the ComicsFragment with the search term
+                // if there is less than one character we load the previous ComicsFragment as we
+                // don't want the user to see a blank screen
                 @Override
                 public boolean onQueryTextChange(String query) {
                     FragmentManager fragmentManager = getFragmentManager();
