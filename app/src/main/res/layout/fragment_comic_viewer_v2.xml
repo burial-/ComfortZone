@@ -8,12 +8,6 @@
     android:fitsSystemWindows="false"
     tools:context="in.hiphopheads.comfortzone.ComicViewer.ComicViewerFragment">
 
-    <!--<uk.co.senab.photoview.PhotoView-->
-    <!--android:id="@+id/comic_viewer_image_v2"-->
-    <!--android:src="@drawable/comicimage"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="200dp"-->
-    <!--android:scaleType="fitCenter" />-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,18 +15,12 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <!--<ImageView-->
-                <!--android:id="@+id/comic_viewer_image_v2"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="260dp"-->
-                <!--android:src="@drawable/com_image"-->
-                <!--android:scaleType="centerCrop" />-->
             <uk.co.senab.photoview.PhotoView
             android:id="@+id/fragment_comic_image_v2"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="@dimen/comic_image_height_v2"
             android:scaleType="centerCrop" />
 
             <View
@@ -49,7 +37,6 @@
                 android:background="@color/titleBar">
 
                 <TextView
-                    android:text="The Comi veryLong"
                     android:id="@+id/fragment_comic_title_v2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -57,7 +44,7 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:text="   View Image"
+                    android:text="@string/comic_viewer_view_img"
                     android:id="@+id/fragment_comic_view_img_btn_v2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -72,7 +59,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="Date"
+                    android:text="@string/comic_viewer_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -92,7 +79,7 @@
 
                 <TextView
                     android:id="@+id/fragment_comic_alt_head_v2"
-                    android:text="Alternative Text"
+                    android:text="@string/comic_viewer_alt_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -112,7 +99,7 @@
 
                 <TextView
                     android:id="@+id/fragment_comic_link_head_v2"
-                    android:text="Link"
+                    android:text="@string/comic_viewer_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -130,7 +117,7 @@
 
                 <TextView
                     android:id="@+id/fragment_comic_hidden_head_v2"
-                    android:text="Hidden Comic"
+                    android:text="@string/comic_viewer_hidden_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="comic_image_height_v2">320dp</dimen>
+</resources>

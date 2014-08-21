@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ComfortZone</string>
+    <!--the application name-->
+    <string name="app_name" translatable="false">ComfortZone</string>
 
+    <!--shortened strings for the navigation drawer-->
     <string name="title_section1">All</string>
-    <string name="title_section2">xkcd</string>
-    <string name="title_section3">Buttersafe</string>
-    <string name="title_section4">ASP</string>
-    <string name="title_section5">PBFComics</string>
+    <string name="title_section2" translatable="false">xkcd</string>
+    <string name="title_section3" translatable="false">Buttersafe</string>
+    <string name="title_section4" translatable="false">ASP</string>
+    <string name="title_section5" translatable="false">PBFComics</string>
 
+    <!--strings for the opening of the application drawer-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Extras</string>
-    <string name="action_settings">Settings</string>
-    <string name="xkcd">xkcd</string>
-    <string name="buttersafe">Buttersafe</string>
-    <string name="amazingsuperpowers">Amazing Super Powers</string>
-    <string name="perrybiblefellowship">Perry Bible Fellowship</string>
-    <string name="title_activity_comic_viewer">ComicViewer</string>
-    <string name="hello_world">Hello world!</string>
 
-    <string name="icon_credit">Icon made by Designmodo from http://www.flaticon.com</string>
-    <string name="testalt">When Vera Menchik entered a 1929 tournament a male competitor mocked her by suggesting that a special Vera Menchik Club would be created for any player who lost to her. When the tournament began, he promptly became the first member of said club, and over the years it accumulated a large and illustrious roster.</string>
+    <!--the settings-->
+    <string name="action_settings">Settings</string>
+
+    <!--the comic names used throughout the application-->
+    <string name="xkcd" translatable="false">xkcd</string>
+    <string name="buttersafe" translatable="false">Buttersafe</string>
+    <string name="amazingsuperpowers" translatable="false">Amazing Super Powers</string>
+    <string name="perrybiblefellowship" translatable="false">Perry Bible Fellowship</string>
+
+    <!--name of the comic viewer activity-->
+    <string name="title_activity_comic_viewer">ComicViewer</string>
+
+    <!--credit for the icon design-->
+    <string name="icon_credit">Thanks to Designmodo for the speech bubble and Michael Flarup for the icon template</string>
+
+    <!--strings for the comic_viewer_v2-->
+    <string name="comic_viewer_view_img">\tView Image</string>
+    <string name="comic_viewer_date">Date</string>
+    <string name="comic_viewer_alt_text">Alternative Text</string>
+    <string name="comic_viewer_link">Link</string>
+    <string name="comic_viewer_hidden_img">Hidden Comic</string>
 
 </resources>
